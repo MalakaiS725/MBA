@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Malakai Shiraki - Martech Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Serif:wght@400;500;600&display=swap">
+<style>
+:root{
+  --bg:#ffffff; --panel:#f7f9fa; --fg:#10233b; --fg-muted:#5a6b80; --line:#dfe5ea;
+  --accent:#1f7a6b; --accent-2:#8fb8b0; --warn:#b4531a; --radius:8px;
+  --shadow:0 1px 3px rgba(16,35,59,.07), 0 6px 18px rgba(16,35,59,.06);
+  --sans:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --serif:"IBM Plex Serif",Georgia,"Times New Roman",serif;
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){ :root:not([data-theme="light"]){
+  --bg:#0c1623; --panel:#13202f; --fg:#e8edf2; --fg-muted:#93a3b5; --line:#233347;
+  --accent:#4fc4ac; --accent-2:#3a6a61; --warn:#e0803f;
+  --shadow:0 1px 3px rgba(0,0,0,.4), 0 6px 20px rgba(0,0,0,.35); color-scheme:dark; }}
+:root[data-theme="dark"]{
+  --bg:#0c1623; --panel:#13202f; --fg:#e8edf2; --fg-muted:#93a3b5; --line:#233347;
+  --accent:#4fc4ac; --accent-2:#3a6a61; --warn:#e0803f;
+  --shadow:0 1px 3px rgba(0,0,0,.4), 0 6px 20px rgba(0,0,0,.35); color-scheme:dark; }
+
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--bg);color:var(--fg);font-family:var(--sans);font-size:15px;line-height:1.55;
+     -webkit-font-smoothing:antialiased}
+.wrap{max-width:1080px;margin-inline:auto;
+      padding-left:max(20px,env(safe-area-inset-left,0px));
+      padding-right:max(20px,env(safe-area-inset-right,0px));
+      padding-block:48px 72px}
+
+header.top{border-bottom:2px solid var(--fg);padding-bottom:20px;margin-bottom:30px}
+.eyebrow{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);font-weight:600}
+h1{font-family:var(--serif);font-weight:600;font-size:clamp(28px,5vw,42px);margin:6px 0 4px;letter-spacing:-.5px}
+.tagline{color:var(--fg-muted);font-size:clamp(15px,2.2vw,18px);max-width:62ch;margin:0}
+.meta{margin-top:14px;font-size:13px;color:var(--fg-muted)}
+.meta a{color:var(--accent);text-decoration:none;border-bottom:1px solid var(--accent-2)}
+.meta a:hover{border-bottom-color:var(--accent)}
+
+.feature{background:var(--panel);border:1px solid var(--line);border-left:4px solid var(--accent);
+         border-radius:var(--radius);padding:22px 24px;margin:0 0 36px;box-shadow:var(--shadow)}
+.feature h2{font-family:var(--serif);font-size:22px;margin:0 0 6px;font-weight:600}
+.feature p{margin:0 0 14px;color:var(--fg-muted);max-width:70ch}
+.feature .row{display:flex;flex-wrap:wrap;gap:10px}
+
+.btn{display:inline-flex;align-items:center;gap:7px;font-size:13.5px;font-weight:500;
+     text-decoration:none;padding:8px 14px;border-radius:6px;border:1px solid var(--line);
+     background:var(--bg);color:var(--fg);transition:border-color .15s,transform .1s}
+.btn:hover{border-color:var(--accent);transform:translateY(-1px)}
+.btn.primary{background:var(--accent);color:#fff;border-color:var(--accent)}
+.btn.primary:hover{opacity:.92}
+.btn .tag{font-size:10px;letter-spacing:.07em;text-transform:uppercase;color:var(--fg-muted)}
+.btn.primary .tag{color:rgba(255,255,255,.75)}
+
+.pillar{margin-bottom:38px}
+.pillar-head{display:flex;align-items:baseline;gap:12px;border-bottom:1px solid var(--line);
+             padding-bottom:8px;margin-bottom:16px;flex-wrap:wrap}
+.pillar-num{font-family:var(--serif);font-size:30px;color:var(--accent-2);line-height:1;font-weight:600}
+.pillar-head h2{font-size:19px;margin:0;font-weight:600;flex:1;min-width:0}
+.pillar-head .count{font-size:12px;color:var(--fg-muted);white-space:nowrap}
+.pillar > p.intro{color:var(--fg-muted);margin:0 0 16px;max-width:72ch;font-size:14px}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,290px),1fr));gap:14px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);
+      padding:15px 17px;display:flex;flex-direction:column;gap:7px;min-width:0;
+      text-decoration:none;color:inherit;transition:border-color .15s,transform .1s,box-shadow .15s}
+.card:hover{border-color:var(--accent);transform:translateY(-2px);box-shadow:var(--shadow)}
+.card .wk{font-size:10.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--accent);font-weight:600}
+.card h3{font-size:14.5px;margin:0;font-weight:600;line-height:1.35}
+.card p{font-size:12.5px;color:var(--fg-muted);margin:0;line-height:1.45}
+.card .foot{display:flex;align-items:center;gap:8px;margin-top:auto;padding-top:6px;
+            font-size:11px;color:var(--fg-muted)}
+.chip{display:inline-block;font-size:10px;letter-spacing:.05em;text-transform:uppercase;
+      padding:2px 7px;border-radius:3px;border:1px solid var(--line);color:var(--fg-muted)}
+.chip.live{color:var(--accent);border-color:var(--accent)}
+.chip.warn{color:var(--warn);border-color:var(--warn)}
+.card.superseded{opacity:.72}
+.card.superseded:hover{opacity:1}
+.feature .eyebrow{display:block;margin-bottom:2px}
+.feature p em{font-style:normal;color:var(--fg);font-weight:600}
+.feature .feature-note{font-size:13.5px;border-left:2px solid var(--line);
+      padding-left:12px;margin-bottom:16px}
+
+footer.btm{margin-top:48px;padding-top:18px;border-top:1px solid var(--line);
+           font-size:12.5px;color:var(--fg-muted);max-width:76ch}
+footer.btm p{margin:0 0 7px}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="top">
+  <div class="eyebrow">MBA Digital Marketing &middot; Capstone Portfolio</div>
+  <h1>Malakai Shiraki</h1>
+  <p class="tagline">Sixteen weeks of performance media, martech architecture, privacy governance and unit economics, built against a real client: Premier Restoration Hawai&#8216;i.</p>
+  <div class="meta">
+    Shidler College of Business, University of Hawai&#8216;i at M&#257;noa &nbsp;&middot;&nbsp; November 2026
+    &nbsp;&middot;&nbsp; Group work with Tanner, Andrew and Pete
+    &nbsp;&middot;&nbsp; <a href="https://premhi.com">premhi.com</a>
+  </div>
+</header>
+
+<section class="feature">
+  <span class="eyebrow">Capstone &middot; Drowning in Leads</span>
+  <h2>Capstone: Premier Restoration Hawai&#8216;i</h2>
+  <p>Premier turns away one job in four, in a slow month. It is short on crews, not on calls. That single fact kills the growth case we wrote in October, because more leads would only mean more refusals. The marketing budget is not an instrument for raising volume at this company. It is the only lever on <em>which</em> work arrives &mdash; and a commercial job returns $3,143 more gross profit than a residential one. Shifting the mix ten points is worth $31,430 per hundred jobs, with no extra crew, no extra job and no extra dollar of spend.</p>
+  <p class="feature-note">This thesis replaced our own. A recorded client interview on 23 November overturned three things we had built on: that Premier used pre-loss agreements, that residential against commercial was the right margin axis, and that the problem was demand. The documents below are the rebuild.</p>
+  <div class="row">
+    <a class="btn primary" href="files/Premier_Executive_Master_Strategy_Dossier.pdf">Master Strategy Dossier <span class="tag">PDF</span></a>
+    <a class="btn" href="files/Drowning_in_Leads.pdf">Pitch Deck <span class="tag">PDF &middot; 16</span></a>
+    <a class="btn" href="files/Premier_Mix_Shift_Model.xlsx">Financial Model <span class="tag">XLSX &middot; live</span></a>
+    <a class="btn" href="files/Premier_Executive_Summary.pdf">One-Page Summary <span class="tag">PDF</span></a>
+    <a class="btn" href="../">Live Analytics Dashboard <span class="tag">Interactive</span></a>
+  </div>
+</section>
+
+<section class="pillar">
+  <div class="pillar-head">
+    <span class="pillar-num">00</span>
+    <h2>Capstone Deliverable Set</h2>
+    <span class="count">8 artefacts</span>
+  </div>
+  <p class="intro">The full defence package. Every figure in it is tagged by source, and the four things we do not know are printed in the deck rather than buried.</p>
+  <div class="grid">
+    <a class="card" href="files/Premier_Executive_Master_Strategy_Dossier.pdf">
+      <span class="wk">Capstone</span><h3>Executive Master Strategy Dossier</h3>
+      <p>The full argument. Service-line economics, the five levers, intent architecture, the commercial landing page wireframe, and the ninety-day sequence.</p>
+      <div class="foot"><span class="chip">PDF</span> Premier Restoration</div></a>
+    <a class="card" href="files/Drowning_in_Leads.pptx">
+      <span class="wk">Capstone</span><h3>Drowning in Leads &mdash; Pitch Deck</h3>
+      <p>Sixteen slides for a C-suite room, ordered to match the handout so a reader can follow top-down while it plays. Read-only copy in the PDF above.</p>
+      <div class="foot"><span class="chip">PPTX</span> 18 min &middot; 4 presenters</div></a>
+    <a class="card" href="files/Premier_Mix_Shift_Model.xlsx">
+      <span class="wk">Capstone</span><h3>Mix Shift Financial Model</h3>
+      <p>Six tabs of live formulas. Every input in one place, a sensitivity grid across margin and mix, and a source log separating client figures from our assumptions.</p>
+      <div class="foot"><span class="chip live">XLSX</span> 174 formulas</div></a>
+    <a class="card" href="files/Premier_Executive_Summary.pdf">
+      <span class="wk">Capstone</span><h3>One-Page Executive Summary</h3>
+      <p>The handout. Recommendation first, four quantified proof points, the risks, and the decision being asked for.</p>
+      <div class="foot"><span class="chip">PDF</span> 1 page</div></a>
+    <a class="card" href="files/Premier_Capstone_Defense.pdf">
+      <span class="wk">Capstone</span><h3>Capstone Defence Run-of-Show</h3>
+      <p>Per-slide content, graphic direction, presenter and timing, with a speakable script for every slide.</p>
+      <div class="foot"><span class="chip">PDF</span> 4 presenters</div></a>
+    <a class="card" href="files/Premier_Boardroom_QA.pdf">
+      <span class="wk">Capstone</span><h3>Boardroom Q&amp;A Preparation</h3>
+      <p>Twenty likely panel questions with the answer and who takes it, tagged by how much damage a fumble would do.</p>
+      <div class="foot"><span class="chip">PDF</span> 10 min panel</div></a>
+    <a class="card" href="files/Premier_Integrated_Client_Campaign_Draft_Plan.pdf">
+      <span class="wk">Capstone</span><h3>Integrated Client Campaign Plan</h3>
+      <p>The client-facing execution plan behind the pitch: channel architecture, flighting, measurement and the ninety-day sequence.</p>
+      <div class="foot"><span class="chip">PDF</span> Premier Restoration</div></a>
+    <a class="card" href="files/Premier_Brand_Reference.pdf">
+      <span class="wk">Capstone</span><h3>Brand Reference</h3>
+      <p>Premier's palette, typography and logo rules, pulled from their live assets so every deliverable in this set matches the client rather than a template.</p>
+      <div class="foot"><span class="chip">PDF</span> Brand system</div></a>
+  </div>
+</section>
+
+<section class="pillar">
+  <div class="pillar-head">
+    <span class="pillar-num">01</span>
+    <h2>Performance Media &amp; Acquisition Architecture</h2>
+    <span class="count">9 artefacts</span>
+  </div>
+  <p class="intro">Channel allocation, algorithmic bidding, creator and social commerce strategy. The through-line is refusing to let bidding engines optimise toward form fills when the money is decided weeks later in the CRM.</p>
+  <div class="grid">
+    <a class="card" href="files/Premier_Paid_Media_Strategy_Brief.pdf">
+      <span class="wk">Week 9</span><h3>Paid Media Campaign Strategy &amp; Allocation Brief</h3>
+      <p>$100,000 across PMax, Paid Search, Meta Advantage+ and Display. Phased bidding because Target ROAS on day one optimises against a guess.</p>
+      <div class="foot"><span class="chip">PDF</span> Premier Restoration</div></a>
+    <a class="card" href="files/Premier_Restoration_Campaign_Portfolio.pdf">
+      <span class="wk">Week 10</span><h3>Campaign Portfolio</h3>
+      <p>Creative matrix by service line and island, with the asset group architecture behind it.</p>
+      <div class="foot"><span class="chip">PDF</span> Premier Restoration</div></a>
+    <a class="card" href="files/PMax_Malakai_Facilitation_Slides.pptx">
+      <span class="wk">Week 6</span><h3>Performance Max Audience Signals</h3>
+      <p>Class facilitation on signal engineering. Signals are suggestions, not fences, and Customer Match needs 1,000 matched users before it does anything.</p>
+      <div class="foot"><span class="chip">PPTX</span> Teaching</div></a>
+    <a class="card" href="files/PMax_Class_Cheat_Sheet.pdf">
+      <span class="wk">Week 6</span><h3>PMax Reference Sheet</h3>
+      <p>Signal types, negative keyword limits, asset group guidance. Fact-checked against live documentation rather than lecture notes.</p>
+      <div class="foot"><span class="chip">PDF</span> Teaching</div></a>
+    <a class="card" href="files/PMax_Audience_Signals_Deck_Template.pptx">
+      <span class="wk">Week 6</span><h3>Facilitation Deck Template</h3>
+      <p>Group teaching deck, 10/10/10 format.</p>
+      <div class="foot"><span class="chip">PPTX</span> Teaching</div></a>
+    <a class="card" href="files/Steep_Social_Commerce_Retail_Media_Plan.pdf">
+      <span class="wk">Week 11</span><h3>Social Commerce &amp; Retail Media Networks</h3>
+      <p>Found that native Instagram and Facebook checkout was deprecated for US merchants, which invalidated the assignment's premise. Built around it.</p>
+      <div class="foot"><span class="chip">PDF</span> Steep Yerba Mat&eacute;</div></a>
+    <a class="card" href="files/Spark_Ads_Whitelisting_Strategy.docx">
+      <span class="wk">Week 8</span><h3>Spark Ads &amp; Whitelisting Strategy</h3>
+      <p>Creator licensing and rights architecture for paid amplification at scale.</p>
+      <div class="foot"><span class="chip">DOCX</span> Creator strategy</div></a>
+    <a class="card" href="files/UGC_Creative_Brief_Duolingo.docx">
+      <span class="wk">Week 8</span><h3>UGC Creative Brief</h3>
+      <p>Hook architecture and the three-second scroll-stop, with vetting criteria for engagement authenticity.</p>
+      <div class="foot"><span class="chip">DOCX</span> Duolingo</div></a>
+    <a class="card" href="files/Steep_MultiModal_Campaign_Portfolio.docx">
+      <span class="wk">Week 7</span><h3>Multi-Modal Campaign Portfolio</h3>
+      <p>Cross-format creative development.</p>
+      <div class="foot"><span class="chip">DOCX</span> Steep Yerba Mat&eacute;</div></a>
+  </div>
+</section>
+
+<section class="pillar">
+  <div class="pillar-head">
+    <span class="pillar-num">02</span>
+    <h2>CRO, Landing Page Optimisation &amp; Search</h2>
+    <span class="count">4 artefacts</span>
+  </div>
+  <p class="intro">The commercial funnel. Emergency work cannot be nurtured, so the lead generation system targets property managers through a free Emergency Response Plan instead, which is a considered B2B decision with a real sales cycle.</p>
+  <div class="grid">
+    <a class="card superseded" href="files/Premier_Restoration_Lead_Gen_Growth_Proposal.pdf">
+      <span class="wk">Week 12</span><h3>Lead Generation Funnel &amp; Growth Proposal</h3>
+      <p>Landing page to HubSpot to Mailchimp with scoring feedback on every touch. Built on pre-loss agreements, which the November client interview established Premier does not use. Kept as the record of what the capstone revision replaced.</p>
+      <div class="foot"><span class="chip warn">Superseded</span> Premier Restoration</div></a>
+    <a class="card" href="files/Premier_Restoration_Brand_Audit_Brief.pdf">
+      <span class="wk">Week 3</span><h3>Brand Audit</h3>
+      <p>Positioning, competitive set and the certification and awards profile the funnel's trust strip is built on.</p>
+      <div class="foot"><span class="chip">PDF</span> Premier Restoration</div></a>
+    <a class="card" href="files/dispatch_board_embed.html">
+      <span class="wk">Week 12</span><h3>Dispatch Board Component</h3>
+      <p>Embeddable crew availability component for the landing page.</p>
+      <div class="foot"><span class="chip live">Live HTML</span> Premier Restoration</div></a>
+    <a class="card" href="files/Capstone_Client_Identification_Premier_Restoration.docx">
+      <span class="wk">Week 1</span><h3>Client Identification</h3>
+      <p>Where it started. Client selection and scope agreement.</p>
+      <div class="foot"><span class="chip">DOCX</span> Premier Restoration</div></a>
+  </div>
+</section>
+
+<section class="pillar">
+  <div class="pillar-head">
+    <span class="pillar-num">03</span>
+    <h2>Martech Automation, Data Privacy &amp; AI Governance</h2>
+    <span class="count">2 artefacts</span>
+  </div>
+  <p class="intro">The architecture that connects consent to identity to the CRM and back to the bidding engines. Both of these found that the assignment's regulatory premise had changed, and both say so rather than working around it.</p>
+  <div class="grid">
+    <a class="card" href="files/Premier_Mobile_Conversational_Commerce_Brief.pdf">
+      <span class="wk">Week 13</span><h3>Mobile &amp; Conversational Commerce Strategy</h3>
+      <p>SMS sequences and the Kai triage agent. Found that messaging is 3.8% of programme cost and labour is 70%, which is the actual case for automation. Built on the FCC consent revocation rule effective 25 November 2026.</p>
+      <div class="foot"><span class="chip">PDF</span> Premier Restoration</div></a>
+    <a class="card" href="files/Premier_AI_Ethics_Dossier_Privacy_Impact_Report.pdf">
+      <span class="wk">Week 15</span><h3>AI Ethics Dossier &amp; Privacy Impact Report</h3>
+      <p>Third-party cookie deprecation was cancelled in April 2025. Neither GDPR nor CCPA applies to Premier and Hawai&#8216;i has no privacy statute, so the obligation is custodial rather than regulatory. Dual-graph CDP keyed on Tax Map Key.</p>
+      <div class="foot"><span class="chip">PDF</span> Premier Restoration</div></a>
+  </div>
+</section>
+
+<section class="pillar">
+  <div class="pillar-head">
+    <span class="pillar-num">04</span>
+    <h2>Financial Modelling, Unit Economics &amp; Analytics</h2>
+    <span class="count">6 artefacts</span>
+  </div>
+  <p class="intro">Where the numbers get checked. The audit below found a blended 9.6:1 return that was concealing two channels taking 80% of the budget and returning 16% of the customers.</p>
+  <div class="grid">
+    <a class="card" href="../">
+      <span class="wk">Week 14</span><h3>Digital Audit Dashboard</h3>
+      <p>Five tabs, live channel-type filter, charts drawn from the underlying data. Runs with no login and no network.</p>
+      <div class="foot"><span class="chip live">Live dashboard</span> Interactive</div></a>
+    <a class="card" href="files/Oura_Digital_Audit_Report.pdf">
+      <span class="wk">Week 14</span><h3>Digital Analytics &amp; Performance Audit</h3>
+      <p>Competitive traffic, GA4 attribution governance and unit economics. A customer from the failing channels cost $162; from the passing ones, $8.</p>
+      <div class="foot"><span class="chip">PDF</span> Oura</div></a>
+    <a class="card" href="files/Oura_Executive_Deck.pptx">
+      <span class="wk">Week 14</span><h3>Audit Executive Deck</h3>
+      <p>Seven slides. Last click over-credits the channel that fails the economics, so the measurement error and the overspend point the same direction.</p>
+      <div class="foot"><span class="chip">PPTX</span> Oura</div></a>
+    <a class="card" href="files/Oura_Dashboard_Cheat_Sheet.pdf">
+      <span class="wk">Week 14</span><h3>Dashboard Reference Sheet</h3>
+      <p>One page. Data provenance, what each tab answers, and the formulas behind every figure.</p>
+      <div class="foot"><span class="chip">PDF</span> Oura</div></a>
+    <a class="card" href="files/Lifecycle_Brief_Category_Saturation_Warning.pdf">
+      <span class="wk">Week 5</span><h3>Category Saturation Warning</h3>
+      <p>262 weeks of trend data. A correlated spike across three brands turned out to be a non-demand artefact, and excluding it flipped one brand from +67% to &minus;5% year on year.</p>
+      <div class="foot"><span class="chip">PDF</span> Lifecycle analysis</div></a>
+    <a class="card" href="files/The_Average_That_Hides_podcast_script.md">
+      <span class="wk">Week 14</span><h3>Podcast: The Average That Hides</h3>
+      <p>Twenty minutes on why a healthy blended ratio is the most dangerous number on the report. Companion piece: The Scoreboard Problem.</p>
+      <div class="foot"><span class="chip">Script</span> Audio</div></a>
+  </div>
+</section>
+
+<footer class="btm">
+  <p><strong>A note on the figures.</strong> The capstone deliverable set at the top of this page runs on figures Premier Restoration supplied directly &mdash; a written data return and a recorded interview on 23 November 2026. Job values, margins, close rates, spend and the refusal rate are the client's own. Two inputs are ours rather than theirs, the blended gross margin and the starting job mix; both are flagged in the deck, the dossier and the model's source log, and the sensitivity analysis shows the recommendation holds without them.</p>
+  <p>Earlier coursework on this page predates that data. Budgets and volumes in the weekly artefacts are modelling figures, and each document says so in its own method note. The Oura work uses publicly available traffic estimates and published pricing, not the company's own analytics.</p>
+  <p>Built with Tanner, Andrew and Pete. Capstone client: Premier Restoration Hawai&#8216;i, licence CT35209.</p>
+</footer>
+
+</div>
+</body>
+</html>
