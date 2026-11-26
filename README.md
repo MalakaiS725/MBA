@@ -1,6 +1,7 @@
-# MBA Digital Marketing — Malakai Shiraki
+# MBA Digital Marketing — Executive Capstone
 
-Shidler College of Business, University of Hawai‘i at Mānoa.
+Shidler College of Business, University of Hawai‘i at Mānoa. November 2026.
+Tanner, Andrew, Pete and Malakai Shiraki.
 
 ## Capstone portfolio
 
