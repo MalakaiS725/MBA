@@ -12,10 +12,10 @@ economics, built against a real client: Premier Restoration Hawai‘i. The capst
 deliverable set leads the page, followed by four operational pillars.
 
 The capstone work runs on figures Premier supplied directly, through a written data
-return and a recorded interview on 23 November 2026. Two inputs are the team's rather
-than the client's, and both are flagged in the deck, the dossier and the model's source
-log. Earlier weekly artefacts use modelled coursework figures and say so in their own
-method notes.
+return and a recorded client interview. Three inputs are the team's rather than the
+client's, and each is flagged in the deck, the dossier and the model's source log.
+Earlier weekly artefacts use modelled coursework figures and say so in their own method
+notes.
 
 ## Oura digital audit dashboard
 
